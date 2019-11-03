@@ -12,9 +12,6 @@
             aria-describedby="emailHelp"
             placeholder="Enter email"
           />
-          <small id="emailHelp" class="form-text text-muted"
-            >We'll never share your email with anyone else.</small
-          >
         </div>
         <div class="form-group">
           <label for="exampleInputPassword1">Password</label>
@@ -25,20 +22,21 @@
             placeholder="Password"
           />
         </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Re-Enter Password</label>
+          <input
+            type="password"
+            class="form-control"
+            id="exampleInputPassword2"
+            placeholder="Password"
+          />
+        </div>
         <div class="container">
           <div class="row">
             <div class="col-sm">
               <button type="submit" class="btn btn-primary width">
-                Login
+                Sign Up
               </button>
-            </div>
-            <div class="col-sm">
-              <a
-                class="btn btn-primary width"
-                [routerLink]="['/signUp']"
-                role="button"
-                >Sign Up</a
-              >
             </div>
           </div>
         </div>
