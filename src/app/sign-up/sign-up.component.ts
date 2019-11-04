@@ -6,6 +6,8 @@ import {
   Validators,
   FormBuilder
 } from '@angular/forms';
+import { signUp } from '../models/signUp';
+import { SignUpService } from '../services/signUp/sign-up.service';
 
 @Component({
   selector: 'app-sign-up',
@@ -15,14 +17,14 @@ import {
 export class SignUpComponent implements OnInit {
   form: FormGroup;
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder, private signUpService: SignUpService) {}
 
   ngOnInit() {
     this.createEmptySignUpForm();
   }
 
   createEmptySignUpForm(): void {
-    this.form =this.fb.group({
+    this.form = this.fb.group({
       email: new FormControl('', [Validators.required, Validators.email]),
       password: new FormControl('', [
         Validators.required,
@@ -44,7 +46,10 @@ export class SignUpComponent implements OnInit {
     });
   }
 
-  update(): void {
-    console.log('dudddu');
+  signUp(): void {
+    const signUpDetails: signUp = this.form.value;
+    this.signUpService.saveSignUpData(signUpDetails).subscribe(data => {
+      console.log(data);
+    });
   }
 }

@@ -4,35 +4,34 @@
     <div class="col-sm padding-top">
       <form [formGroup]="form">
         <div class="form-group">
-          <label for="exampleInputEmail1" formControlName="fullName">Name</label>
+          <label for="exampleInputEmail1">Name</label>
           <input
             type="text"
             class="form-control"
             id="name"
             placeholder="Enter full name"
+            formControlName="fullName"
           />
         </div>
         <div class="form-group">
-          <label for="exampleInputEmail1" formControlName="email"
-            >Email address</label
-          >
+          <label for="exampleInputEmail1">Email address</label>
           <input
             type="email"
             class="form-control"
             id="exampleInputEmail1"
             aria-describedby="emailHelp"
             placeholder="Enter email"
+            formControlName="email"
           />
         </div>
         <div class="form-group">
-          <label for="exampleInputPassword1" formControlName="password"
-            >Password</label
-          >
+          <label for="exampleInputPassword1">Password</label>
           <input
             type="password"
             class="form-control"
             id="exampleInputPassword1"
             placeholder="Password"
+            formControlName="password"
           />
         </div>
         <div class="form-group">
@@ -45,29 +44,31 @@
           />
         </div>
         <div class="form-group">
-            <label for="pan" formControlName="pan">PAN</label>
-            <input
-              type="text"
-              class="form-control"
-              id="pan"
-              placeholder="Enter PAN number"
-            />
-          </div>
-          <div class="form-group">
-              <label for="pan" formControlName="bankAccountnumber">Account Number</label>
-              <input
-                type="text"
-                class="form-control"
-                id="bankAccountnumber"
-                placeholder="Enter Account number"
-              />
-            </div>
+          <label for="pan">PAN</label>
+          <input
+            type="text"
+            class="form-control"
+            id="pan"
+            placeholder="Enter PAN number"
+            formControlName="pan"
+          />
+        </div>
+        <div class="form-group">
+          <label for="pan">Account Number</label>
+          <input
+            type="text"
+            class="form-control"
+            id="bankAccountnumber"
+            placeholder="Enter Account number"
+            formControlName="bankAccountnumber"
+          />
+        </div>
         <div class="container">
           <div class="row">
             <div class="col-sm">
               <button
                 type="submit"
-                (ngSubmit)="update()"
+                (click)="signUp()"
                 class="btn btn-primary width"
               >
                 Sign Up
